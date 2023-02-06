@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { User } from '../users/users.model';
+import { Exampleone } from 'src/app/models/exampleone.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {
-
+export class ExampleoneService {
+  
   url = 'https://backend-yduy.onrender.com/api/users';
 
   constructor(private http: HttpClient) { }
@@ -15,7 +15,7 @@ export class DataService {
     return this.http.get(this.url);
   }
 
-  addUser(user: User) {
+  addUser(user: Exampleone) {
     return this.http.post(this.url, user);
   }
 
@@ -23,7 +23,7 @@ export class DataService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  updateUser(user: User){
+  updateUser(user: Exampleone){
     return this.http.put(`${this.url}/${user._id}`, user);
   }
 }
