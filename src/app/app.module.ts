@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ExampletwoComponent } from './exampletwo/exampletwo.component';
 import { ExampleoneComponent } from './exampleone/exampleone.component';
 import { AngularMaterialModule } from './angular-material.module';
 @NgModule({
@@ -22,7 +21,6 @@ import { AngularMaterialModule } from './angular-material.module';
     BrowserAnimationsModule,
     AngularMaterialModule,
     ExampleoneComponent,
-    ExampletwoComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
