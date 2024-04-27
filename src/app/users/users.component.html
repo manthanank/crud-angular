@@ -9,8 +9,10 @@
     </form>
 </div>
 <div class="container">
+    <button mat-raised-button type="submit" *ngIf="!editMode" (click)="onSubmit()">Add</button>&nbsp;
+    <button mat-raised-button type="submit" *ngIf="editMode" (click)="onSubmit()">Update</button>&nbsp;
     <button mat-raised-button (click)="onReset()">Reset</button>&nbsp;
-    <button mat-raised-button (click)="onSubmit()">Submit</button>
+    <button mat-raised-button (click)="onCancel()">Cancel</button>
 </div>
 <div class="container">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
