@@ -1,11 +1,29 @@
-.container{
-    display: flex;
-    flex-direction: column;
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
-form{
-    display: flex;
-    flex-direction: column;
-    input{
-        display: flex;
-    }
+
+form {
+    margin-bottom: 20px;
+}
+
+mat-form-field {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
 }

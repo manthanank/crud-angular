@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  { path: 'home', component: UsersComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: UsersComponent },
   { path: '**', redirectTo: '404' }
 ];
 

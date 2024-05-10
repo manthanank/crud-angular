@@ -1,4 +1,5 @@
 <div class="container">
+    <h1>User Form</h1>
     <form [formGroup]="userForm">
         <mat-form-field appearance="fill">
             <input matInput formControlName="name" placeholder="Enter name">
@@ -7,14 +8,13 @@
             <input matInput formControlName="age" placeholder="Enter age">
         </mat-form-field>
     </form>
-</div>
-<div class="container">
     <button mat-raised-button type="submit" *ngIf="!editMode" (click)="onSubmit()">Add</button>&nbsp;
     <button mat-raised-button type="submit" *ngIf="editMode" (click)="onSubmit()">Update</button>&nbsp;
     <button mat-raised-button (click)="onReset()">Reset</button>&nbsp;
     <button mat-raised-button (click)="onCancel()">Cancel</button>
 </div>
 <div class="container">
+    <h1>Users List</h1>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Name </th>
