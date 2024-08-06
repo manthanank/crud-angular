@@ -9,10 +9,12 @@ import { DataService } from '../services/data.service';
 })
 export class UsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'age', 'edit', 'delete'];
+  displayedColumns: string[] = ['name', 'age', 'actions'];
   dataSource: any;
 
   editMode = false;
+  isLoading = false;
+  error: string | null = null;
 
   userForm: FormGroup = this.fb.group({
     _id: [''],
@@ -27,9 +29,18 @@ export class UsersComponent implements OnInit {
   }
 
   getUser() {
-    this.dataService.getUsers().subscribe(users => {
-      this.dataSource = users;
-    });
+    this.isLoading = true;
+    this.error = null;
+    this.dataService.getUsers().subscribe(
+      users => {
+        this.dataSource = users;
+        this.isLoading = false;
+      },
+      err => {
+        this.error = 'Failed to load users';
+        this.isLoading = false;
+      }
+    );
   }
 
   onEdit(user: any) {
@@ -44,16 +55,31 @@ export class UsersComponent implements OnInit {
 
   onSubmit() {
     if (this.userForm.valid) {
+      this.isLoading = true;
+      this.error = null;
       if (this.editMode) {
-        this.dataService.updateUser(this.userForm.value).subscribe(data => {
-          this.getUser();
-          this.editMode = false;
-        })
-      }
-      else {
-        this.dataService.addUser(this.userForm.value).subscribe(data => {
-          this.getUser();
-        })
+        this.dataService.updateUser(this.userForm.value).subscribe(
+          data => {
+            this.getUser();
+            this.editMode = false;
+            this.isLoading = false;
+          },
+          err => {
+            this.error = 'Failed to update user';
+            this.isLoading = false;
+          }
+        );
+      } else {
+        this.dataService.addUser(this.userForm.value).subscribe(
+          data => {
+            this.getUser();
+            this.isLoading = false;
+          },
+          err => {
+            this.error = 'Failed to add user';
+            this.isLoading = false;
+          }
+        );
       }
     }
     this.userForm.reset();
@@ -61,9 +87,18 @@ export class UsersComponent implements OnInit {
 
   onDelete(id: any) {
     if (confirm("Are you sure?")) {
-      this.dataService.deleteUser(id).subscribe(data => {
-        this.getUser();
-      });
+      this.isLoading = true;
+      this.error = null;
+      this.dataService.deleteUser(id).subscribe(
+        data => {
+          this.getUser();
+          this.isLoading = false;
+        },
+        err => {
+          this.error = 'Failed to delete user';
+          this.isLoading = false;
+        }
+      );
     }
   }
 

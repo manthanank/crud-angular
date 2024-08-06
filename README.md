@@ -1,27 +1,57 @@
-# CrudAngular
+# Crud Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+This is a simple CRUD application using Angular. It is a simple application that allows you to create, read, update and delete users. The application is built using Angular and Angular Material.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Create a new user
+- Read users
+- Update a user
+- Delete a user
 
-## Code scaffolding
+## Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular
+- Angular Material
 
-## Build
+## Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone the repository
 
-## Running unit tests
+    ```bash
+    git clone https://github.com/manthanank/crud-angular.git
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+2. Install dependencies
 
-## Running end-to-end tests
+    ```bash
+    npm install
+    ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Run the application
 
-## Further help
+    ```bash
+    ng serve
+    ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## Screenshots
+
+![Screenshot 1](/src/assets/image1.png)
+![Screenshot 2](/src/assets/image2.png)
+
+## Demo
+
+Here is a working live demo: [Link](https://spiffy-starship-08ae33.netlify.app/)
+
+## Acknowledgements
+
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io/)
+
+## Support
+
+If you like this project, give it a ⭐

@@ -11,6 +11,7 @@ import { MatCommonModule, MatRippleModule } from "@angular/material/core";
 import { MatIconModule } from "@angular/material/icon";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatTableModule } from "@angular/material/table";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
   exports: [
@@ -27,6 +28,8 @@ import { MatTableModule } from "@angular/material/table";
     MatCardModule,
     MatCommonModule,
     MatTableModule,
+    MatIconModule,
+    MatTooltipModule
   ]
 })
 export class AngularMaterialModule { }
