@@ -47,6 +47,7 @@ export class UsersComponent implements OnInit {
       if (this.editMode) {
         this.dataService.updateUser(this.userForm.value).subscribe(data => {
           this.getUser();
+          this.editMode = false;
         })
       }
       else {
