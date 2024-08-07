@@ -48,7 +48,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Demo
 
-Here is a working live demo: [Link](https://spiffy-starship-08ae33.netlify.app/)
+Here is a working live demo: [Link](https://sage-starship-4fccad.netlify.app/)
 
 ## Acknowledgements
 
