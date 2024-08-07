@@ -1,0 +1,51 @@
+<div class="row">
+  <div class="col-md-8 mx-auto text-center">
+    <h2 class="display-3">Edit User Form</h2>
+    <hr />
+  </div>
+  <div class="col-md-6 mx-auto">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="userForm" (ngSubmit)="save()">
+          <div>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Name</mat-label>
+              <input matInput placeholder="Name" formControlName="name" required />
+              @if ( (name?.touched || submitted) &&
+              name?.errors?.['required'] ) {
+              <mat-error>Title is required.</mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <div>
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Age</mat-label>
+              <input matInput placeholder="Age" formControlName="age" required />
+              @if ( (age?.touched || submitted) &&
+              age?.errors?.['required'] ) {
+              <mat-error>
+                Age is required.
+              </mat-error>
+              }
+              @if (age?.errors?.['min']) {
+              <mat-error>
+                Age must be greater than or equal to 18.
+              </mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <mat-card-actions class="d-flex justify-content-end">
+            <button type="submit" mat-raised-button color="primary" class="me-2">
+              Update
+            </button>
+            <button type="button" mat-raised-button color="warn" (click)="navigateToHome()">
+              Cancel
+            </button>
+          </mat-card-actions>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
